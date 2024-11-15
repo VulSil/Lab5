@@ -1,0 +1,133 @@
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>“Таблица” </title>
+  <link rel="stylesheet" href="table.css">
+ </head>
+ <body>
+	<div class="header">
+        <img src="necron.jpg" width="100" height="75" alt="Логотип">
+        <a href="LabCK5.html">Основная страница</a>
+        <a href="page2.html">Позиционирование элементов</a>
+		    <a href="table.html">Таблица</a>
+        </div>
+
+        <form id="Form">
+          <div class="contentRight">
+                  <label for="Weapon">Weapon:</label>
+                  <input type="text" id="Weapon" name="Weapon" value="">
+                  <label for="Range">Range:</label>
+                  <input type="text" id="Range" name="Range" value="">
+                  <label for="Atack">Atack:</label>
+                  <input type="text" id="Atack" name="Atack" value="">
+                  <label for="BWS">Balistic/Weapon skill:</label>
+                  <input type="text" id="BWS" name="BWS" value="">
+                  <br>
+                  <label for="Strength">Strength:</label>
+                  <input type="text" id="Strength" name="Strength" value="">
+                  <label for="AP">Armor Piercing:</label>
+                  <input type="text" id="AP" name="AP" value="">
+                  <label for="Damage">Damage:</label>
+                  <input type="text" id="Damage" name="Damage" value="">
+
+                  <button type="submit">Добавить</button>
+              
+          </div>
+      </form>
+
+        <table>
+            <caption>
+                Профили оружия юнита necron overlord из warhammer 40000 10th
+            </caption>
+          <thead>
+            <tr>
+              <th>Weapon</th>
+              <th>Range</th>
+              <th>Atack</th>
+              <th>Balistic/Weapon Skill</th>
+              <th>Strength</th>
+              <th>Armor Piercing</th>
+              <th>Damage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td rowspan="2">Staff of light</td>
+                <td>18"</td>
+                <td>3</td>
+                <td>2+</td>
+                <td>5</td>
+                <td>-2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>Melee</td>
+                <td>4</td>
+                <td>2+</td>
+                <td>5</td>
+                <td>-2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>Tachyon arrow [one shot]</td>
+                <td>72"</td>
+                <td>1</td>
+                <td>2+</td>
+                <td>16</td>
+                <td>-5</td>
+                <td>D6+2</td>
+              </tr>
+              <tr>
+                <td>Overlord’s blade [devastating wounds]</td>
+                <td>Melee</td>
+                <td>4</td>
+                <td>2+</td>
+                <td>8</td>
+                <td>-3</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>Voidscythe [devastating wounds]</td>
+                <td>Melee</td>
+                <td>3</td>
+                <td>3+</td>
+                <td>12</td>
+                <td>-3</td>
+                <td>3</td>
+              </tr>
+              
+          </tbody>    
+        </table>
+        <script>
+          const form = document.getElementById('Form');
+          const tableBody = document.querySelector('tbody');
+
+  
+          form.addEventListener('submit', function(event) {
+              event.preventDefault();
+  
+              const Weapon = document.getElementById('Weapon').value;
+              const Range = document.getElementById('Range').value; 
+              const Atack = document.getElementById('Atack').value;
+              const BWS = document.getElementById('BWS').value;
+              const Strength = document.getElementById('Strength').value;
+              const AP = document.getElementById('AP').value; 
+              const Damage = document.getElementById('Damage').value;
+  
+              const newRow = document.createElement('tr');
+              newRow.innerHTML = `
+                  <td>${Weapon}</td>
+                  <td>${Range}</td>
+                  <td>${Atack}</td>
+                  <td>${BWS}</td>
+                  <td>${Strength}</td>
+                  <td>${AP}</td>
+                  <td>${Damage}</td>
+              `;
+              tableBody.appendChild(newRow);
+  
+              form.reset();
+          });
+      </script>
+</body>
+</html>
